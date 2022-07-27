@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="PROGRESS BAR">
+        <div class="slds-var-m-around_medium">
+            <lightning-input
+                type="number"
+                value={value}
+                onchange={changeHandler}>
+            </lightning-input>
+            <!--remember to turn your attribute to kebab-case-->
+            <div class="slds-var-m-top_small">
+            <c-progress-bar 
+                progress-value={value}>
+            </c-progress-bar>
+        </div>
+      </div>
+    </lightning-card>
+    
+</template>
