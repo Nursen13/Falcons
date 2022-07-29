@@ -1,17 +1,34 @@
 <template>
     <lightning-card title="PROGRESS BAR">
         <div class="slds-var-m-around_medium">
-            <lightning-input
-                type="number"
-                value={value}
-                onchange={changeHandler}>
-            </lightning-input>
-            <!--remember to turn your attribute to kebab-case-->
-            <div class="slds-var-m-top_small">
-            <c-progress-bar 
-                progress-value={value}>
-            </c-progress-bar>
-        </div>
+            <div class="slds-grid slds-gutters">
+                <!--partinoing into 2 different sized columns, one for button-->
+                <div class="slds-col slds-size_3-of-4">
+                    <lightning-input
+                        type="number"
+                        value={value}
+                        variant="label-hidden"
+                        onchange={changeHandler}>
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-4">
+                    <!--to eliminate the space before button-->
+                    <lightning-button
+                        variant = "brand"
+                        label = "Reset"
+                        onclick={resetprogressBar}>
+                    </lightning-button>     
+                </div>
+            </div>
+
+                  <!--remember to turn your attribute to kebab-case-->
+                  <div class="slds-var-m-top_small">
+                    <c-progress-bar 
+                        progress-value={value}>
+                    </c-progress-bar>
+                    
+            </div>
+              
       </div>
     </lightning-card>
     
