@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="C2P SIMPLE EVENT">
+        <div class="slds-var-m-around_medium">
+            <!--put margin after content to sperate button-->
+            <div class="slds-var-m-bottom_small">
+            THIS IS C2P COMMUNICATION CLICK ON THE BUTTON ON PARENT WILL DISPLAY MODAL ON CHILD AND CLICK CLOSE BUTTON ON CHILD CLOSE THE MODAL ON PARENT
+        </div>
+    
+    <!--button to display modal-->
+    <lightning-button
+        variant="brand"
+        label="Show Modal"
+        onclick={clickHandler}>
+    </lightning-button>
+
+    <!--someone clicked the close button on child, parents recieves the event and closes the modal-->
+    <template if:true={showModal}>
+        <c-modal-component-child onclose={childHandler}></c-modal-component-child>
+    </template>
+</div>
+</lightning-card>
+</template>
